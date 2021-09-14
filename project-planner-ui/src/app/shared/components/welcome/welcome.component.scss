@@ -1,0 +1,28 @@
+.pp-welcome {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.pp-welcome-card {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pp-welcome-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px !important;
+  margin-bottom: 10px !important;
+}
+
+.pp-welcome-btn {
+  width: 200px;
+  height: 100px;
+}
+
+.pp-welcome-card-header{
+    display: flex;
+    justify-content: center;
+}

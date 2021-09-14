@@ -1,0 +1,3 @@
+node_modules/*/**
+project-planner-api/dist
+project-planner-api/ui
