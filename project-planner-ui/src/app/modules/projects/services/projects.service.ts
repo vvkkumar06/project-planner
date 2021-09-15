@@ -18,4 +18,8 @@ export class ProjectsService {
         return this.http.get<Response<Project[]>>(this.baseUrl + this.projectsUrl);
     }
 
+    updateProject(project: Project): Observable<Response<any>> {
+        return this.http.put<Response<any>>(this.baseUrl + this.projectsUrl, project);
+    }
+
 }

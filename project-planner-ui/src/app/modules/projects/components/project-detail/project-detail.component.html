@@ -1,0 +1,32 @@
+<section id="pp-project-detail" class="container">
+    <nav class="navbar navbar-light bg-light mb-5">
+        <a class="navbar-brand">Project Details</a>
+    </nav>
+    <form [formGroup]="projectForm" *ngIf="projectForm">
+        <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="form-label col-sm-3">Email address:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="name" formControlName="name" >
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="description" class="form-label col-sm-3">Description:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="description"  formControlName="description">
+            </div>
+        </div>
+        <div class="mb-3 row ">
+            <label class="form-check-label col-sm-3" for="startDate">Start Date:</label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control" id="startDate"  formControlName="startDate">
+            </div>
+        </div>
+        <div class="mb-3 row ">
+            <label class="form-check-label col-sm-3" for="endDate">End Date:</label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control" id="endDate"  formControlName="endDate">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary float-right" (click)="projectUpdateHandler()">Update</button>
+    </form>
+</section>

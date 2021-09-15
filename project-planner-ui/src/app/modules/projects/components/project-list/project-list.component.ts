@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Project } from '../../models/project';
 import { ProjectsService } from '../../services/projects.service';
 
@@ -12,7 +13,8 @@ export class ProjectListComponent implements OnInit {
     projects: Project[] = [];
 
     constructor(
-        private projectService: ProjectsService
+        private projectService: ProjectsService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -23,6 +25,12 @@ export class ProjectListComponent implements OnInit {
         this.projectService.getAllProjects().subscribe((response) => { 
             this.projects = response.data as Project[];
          });
+    }
+
+    projectHandler(project: Project) {
+        this.router.navigate(['/projects/details'], { 
+            state: { project: project } 
+          })
     }
 
 }

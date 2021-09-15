@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './shared/components/welcome/welcome.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
     declarations: [
@@ -18,7 +20,8 @@ import { WelcomeComponent } from './shared/components/welcome/welcome.component'
         AppRoutingModule,
         MatCardModule,
         MatButtonModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
+        NgbModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Error, FilterQuery, Model, Mongoose, PopulateOptions } from 'mongoose'; 
+import { FilterQuery, Model, PopulateOptions } from 'mongoose';
 
 export class BaseRepository<T> {
     private model: Model<T>;
