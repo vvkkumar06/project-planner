@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "build": "cross-env NODE_ENV=development rimraf dist && tsc",
     "serve": "cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon dist/index.js\"",
-    "start": "cross-env NODE_ENV=production concurrently \"npm run build\" \"node dist/index.js\""
+    "build:start": "cross-env NODE_ENV=production concurrently \"npm run build\" \"node dist/index.js\"",
+    "start": "node dist/index"
   },
   "keywords": [],
   "author": "",
