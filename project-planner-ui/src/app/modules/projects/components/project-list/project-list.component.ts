@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 import { Project } from '../../models/project';
+
+
 import { ProjectsService } from '../../services/projects.service';
 
 @Component({
@@ -11,6 +15,7 @@ import { ProjectsService } from '../../services/projects.service';
 export class ProjectListComponent implements OnInit {
 
     projects: Project[] = [];
+    deleteIcon = faTrash;
 
     constructor(
         private projectService: ProjectsService,
@@ -31,6 +36,14 @@ export class ProjectListComponent implements OnInit {
         this.router.navigate(['/projects/details'], { 
             state: { project: project } 
           })
+    }
+
+    removeProject(project: Project) {
+        this.projectService.deleteProject(project._id as string).subscribe((res) => {
+            if(!res.error){
+                this.getProjects();
+            }
+        })
     }
 
 }

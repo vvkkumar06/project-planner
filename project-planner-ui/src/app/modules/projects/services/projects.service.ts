@@ -22,4 +22,12 @@ export class ProjectsService {
         return this.http.put<Response<any>>(this.baseUrl + this.projectsUrl, project);
     }
 
+    addProject(project: Project): Observable<Response<any>> {
+        return this.http.post<Response<any>>(this.baseUrl + this.projectsUrl, project);
+    }
+
+    deleteProject(id: string): Observable<Response<any>> {
+        return this.http.delete<Response<any>>(this.baseUrl + this.projectsUrl+'/'+id);
+    }
+
 }

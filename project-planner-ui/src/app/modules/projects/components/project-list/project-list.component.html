@@ -1,6 +1,7 @@
 <section class="container mt-5">
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Project List</a>
+        <a class="navbar-brand"><h1>Project List</h1></a>
+        <button type="submit" class="btn btn-primary float-right" routerLink="/projects/create">Create New Project</button>
     </nav>
     <table class="table table-hover">
         <thead>
@@ -9,14 +10,16 @@
                 <th scope="col">Description</th>
                 <th scope="col">Start Date</th>
                 <th scope="col">End Date</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let project of projects" (click)="projectHandler(project)">
-                <th scope="row">{{project.name}}</th>
+            <tr *ngFor="let project of projects">
+                <th scope="row" class="project-name" (click)="projectHandler(project)">{{project.name}}</th>
                 <td>{{project.description}}</td>
                 <td>{{project.startDate | date}}</td>
                 <td>{{project.endDate | date}}</td>
+                <td><fa-icon [icon]="deleteIcon" (click)="removeProject(project)" class="delete-icon"></fa-icon></td>
             </tr>
         </tbody>
     </table>

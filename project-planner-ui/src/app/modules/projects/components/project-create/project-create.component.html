@@ -1,6 +1,8 @@
 <section id="pp-project-detail" class="container">
     <nav class="navbar navbar-light bg-light mb-5">
-        <a class="navbar-brand"><h1>Project Details</h1></a>
+        <a class="navbar-brand">
+            <h1>Create New Project</h1>
+        </a>
     </nav>
     <form [formGroup]="projectForm" *ngIf="projectForm">
         <div class="mb-3 row">
@@ -36,6 +38,6 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary float-right" (click)="projectUpdateHandler()">Update</button>
+        <button type="submit" class="btn btn-primary float-right" (click)="projectAddHandler()">Create</button>
     </form>
 </section>
