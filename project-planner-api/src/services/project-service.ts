@@ -1,3 +1,4 @@
+import { NodeDIManager } from "node-di-manager";
 import { Project } from "../entities/project";
 import ResponseEntity from "../entities/response";
 import ProjectRepository from "../repositories/project-repository";
@@ -6,7 +7,7 @@ export default class ProjectService {
 
     private repo: ProjectRepository;
     constructor() {
-        this.repo = new ProjectRepository();
+        this.repo = NodeDIManager.get('ProjectRepository');
     }
 
     async getProjectById(id: string): Promise<ResponseEntity<Project>> {
